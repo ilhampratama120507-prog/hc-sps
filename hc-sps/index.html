@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HC-SPS | Human-Centered Study Productivity System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="hero">
+  <h1>Human-Centered<br><span>Study Productivity System</span></h1>
+  <p>Understand your limits. Study smarter without burnout.</p>
+  <button onclick="scrollToForm()">Start Assessment</button>
+</section>
+
+<section class="card" id="form">
+  <h2>Self Assessment</h2>
+
+  <div class="grid">
+    <div>
+      <label>Sleep hours (per night)</label>
+      <input type="number" id="sleep">
+    </div>
+
+    <div>
+      <label>Wake-up time</label>
+      <input type="time" id="wake">
+    </div>
+
+    <div>
+      <label>Study hours (per day)</label>
+      <input type="number" id="study">
+    </div>
+
+    <div>
+      <label>Screen time (hours/day)</label>
+      <input type="number" id="screen">
+    </div>
+
+    <div>
+      <label>Active days per week</label>
+      <input type="number" id="activeDays">
+    </div>
+
+    <div>
+      <label>When do you feel most productive?</label>
+      <select id="productive">
+        <option value="Morning">Morning</option>
+        <option value="Afternoon">Afternoon</option>
+        <option value="Night">Night</option>
+      </select>
+    </div>
+  </div>
+
+  <button class="analyze" onclick="analyze()">Analyze Balance</button>
+</section>
+
+<section class="card hidden" id="result">
+  <h2>Productivity Result</h2>
+
+  <div class="score-box">
+    <h3 id="scoreText"></h3>
+    <p id="zoneText"></p>
+    <p class="peak">
+      Estimated Peak Focus Window:
+      <strong id="peakTime"></strong>
+    </p>
+  </div>
+
+  <div class="chart">
+    <div class="bar"><span>Sleep</span><div class="bar-fill" id="sleepBar"></div></div>
+    <div class="bar"><span>Study</span><div class="bar-fill" id="studyBar"></div></div>
+    <div class="bar"><span>Screen</span><div class="bar-fill" id="screenBar"></div></div>
+    <div class="bar"><span>Routine</span><div class="bar-fill" id="routineBar"></div></div>
+  </div>
+
+  <h3>Insight</h3>
+  <p id="insight"></p>
+
+  <h3>Suggested Actions</h3>
+  <ul id="solutions"></ul>
+
+  <h3>Potential Threats</h3>
+  <ul id="threats"></ul>
+
+  <button class="reset" onclick="resetAll()">Re-evaluate</button>
+</section>
+
+<footer>
+  HC-SPS © 2026 — Human-Centered Productivity Tool
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
